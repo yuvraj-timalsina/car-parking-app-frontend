@@ -18,4 +18,11 @@
     .btn-primary {
         @apply text-white bg-blue-600 hover:bg-blue-500;
     }
+    .router-link {
+        @apply text-blue-600 hover:underline;
+    }
+
+    .router-link-active.router-link {
+        @apply underline;
+    }
 }
