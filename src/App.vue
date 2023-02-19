@@ -13,7 +13,7 @@ import { RouterLink, RouterView } from "vue-router";
             >
               P
             </div>
-            myParking
+            Parking App
           </h2>
           <RouterLink class="router-link" :to="{ name: 'home' }">
             Home
