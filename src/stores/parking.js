@@ -8,7 +8,6 @@ export const useParking = defineStore("parking", () => {
   const loading = ref(false);
   const parkings = ref([]);
   const stoppedParkings = ref([]);
-  const parkingDetails = ref({});
   const form = reactive({
     vehicle_id: null,
     zone_id: null,
@@ -19,10 +18,6 @@ export const useParking = defineStore("parking", () => {
     form.zone_id = null;
 
     errors.value = {};
-  }
-
-  function resetParkingDetails() {
-    parkingDetails.value = {};
   }
 
   function startParking() {
@@ -60,12 +55,6 @@ export const useParking = defineStore("parking", () => {
     });
   }
 
-  function getParking(parking) {
-    return window.axios.get(`parkings/${parking.id}`).then((response) => {
-      parkingDetails.value = response.data.data;
-    });
-  }
-
   return {
     form,
     errors,
@@ -77,8 +66,5 @@ export const useParking = defineStore("parking", () => {
     stopParking,
     stoppedParkings,
     getStoppedParkings,
-    parking: parkingDetails,
-    getParking,
-    resetParkingDetails,
   };
 });
